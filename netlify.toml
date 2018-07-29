@@ -1,5 +1,5 @@
 [build]
   base    = "docs/"
-  publish = "build/asciidoc/html5/"
+  publish = "docs/build/asciidoc/html5/"
   command = "./gradlew build"
 
