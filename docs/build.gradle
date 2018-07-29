@@ -1,0 +1,27 @@
+plugins {
+    id 'org.asciidoctor.convert' version '1.5.7'
+}
+
+asciidoctor {
+    sourceDir = file('.')
+
+    resources {
+        from(sourceDir) {
+            include '**/*.png'
+            exclude 'build/**'
+        }
+    }
+
+    attributes 'source-highlighter': 'coderay',
+        toc                 : 'left',
+        sectanchors         : '',
+        icons               : 'font',
+        idprefix            : '',
+        idseparator         : '-',
+        docinfo1            : '',
+        'gh-org'            : 'https://github.com/bisq-network',
+        'gh-team'           : 'https://github.com/orgs/bisq-network/teams',
+        'role'              : 'https://github.com/bisq-network/roles/issues'
+}
+
+build.dependsOn asciidoctor
